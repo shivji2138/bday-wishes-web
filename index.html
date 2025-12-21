@@ -1,10 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Surprise</title>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Surprise 🎉</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Subtle floating */
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0); }
+    }
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* Neon glow */
+    .neon {
+      box-shadow:
+        0 0 20px rgba(168, 85, 247, 0.35),
+        0 0 40px rgba(168, 85, 247, 0.15);
+    }
+  </style>
 </head>
- <body>
-   <p>HI</p>
- </body> 
+
+<body class="min-h-screen flex items-center justify-center px-4
+             bg-gradient-to-br from-[#0b0014] via-[#16001f] to-[#0a0012] text-white">
+
+  <!-- Ambient Glow -->
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute top-20 left-20 w-72 h-72 bg-purple-600/30 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-20 w-72 h-72 bg-fuchsia-600/30 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- Main Card -->
+  <div class="max-w-5xl w-full rounded-3xl p-8 md:p-10
+              bg-white/5 backdrop-blur-xl border border-white/10
+              neon animate__animated animate__fadeInUp">
+
+    <!-- Emoji -->
+    <div class="text-6xl mb-4 text-center float">🎉</div>
+
+    <!-- Heading -->
+    <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-3">
+      Happy Birthday <span class="text-purple-400">Guru</span> 🎂
+    </h1>
+
+    <p class="text-center text-gray-300 mb-10">
+      Another year. Another level. Keep shining ✨
+    </p>
+
+    <!-- Image Grid -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Image -->
+      <!--<div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
+        <img
+          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/Snapchat-688603331.jpg"
+          class="w-full h-full object-cover transform
+                 group-hover:scale-110 group-hover:rotate-1
+                 transition duration-500"
+          alt="Memory 1"
+        />
+      </div>-->
+
+      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
+        <img
+          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/IMG-20230123-WA0003.jpg"
+          class="w-full h-full object-cover transform
+                 group-hover:scale-110 group-hover:-rotate-1
+                 transition duration-500"
+          alt="Memory 2"
+        />
+      </div>
+
+      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
+        <img
+          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/IMG-20230216-WA0000.jpg"
+          class="w-full h-full object-cover transform
+                 group-hover:scale-110 group-hover:-rotate-1
+                 transition duration-500"
+          alt="Memory 2"
+        />
+      </div>
+
+      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
+        <img
+          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/constitution group .jpg"
+          class="w-full h-full object-cover transform
+                 group-hover:scale-110 group-hover:-rotate-1
+                 transition duration-500"
+          alt="Memory 2"
+        />
+      </div>
+
+      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
+        <img
+          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/Snapchat-688603331.jpg"
+          class="w-full h-full object-cover transform
+                 group-hover:scale-110 group-hover:-rotate-1
+                 transition duration-500"
+          alt="Memory 2"
+        />
+      </div>
+
+      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
+        <img
+          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/Snapchat-29700786.jpg"
+          class="w-full h-full object-cover transform
+                 group-hover:scale-110 group-hover:-rotate-1
+                 transition duration-500"
+          alt="Memory 2"
+        />
+      </div>
+
+      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
+        <img
+          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/Snapchat-1168903086.jpg"
+          class="w-full h-full object-cover transform
+                 group-hover:scale-110 group-hover:-rotate-1
+                 transition duration-500"
+          alt="Memory 2"
+        />
+      </div>
+
+      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
+        <img
+          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/IMG-20250216-WA0002.jpg"
+          class="w-full h-full object-cover transform
+                 group-hover:scale-110 group-hover:-rotate-1
+                 transition duration-500"
+          alt="Memory 2"
+        />
+      </div>
+
+      <div class="">
+        <img 
+            src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/IMG-20241223-WA0013.jpg"
+            class="w-full h-full object-cover transform
+                 group-hover:scale-110 group-hover:-rotate-1
+                 transition duration-500"
+        />
+      </div>
+
+    
+
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-10 text-center text-sm text-gray-400">
+      Crafted with 💜 by <span class="text-purple-300 font-semibold">Shiva Akash R</span>
+    </div>
+
+  </div>
+
+</body>
 </html>
