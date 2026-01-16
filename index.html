@@ -1,165 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Birthday Surprise 🎉</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    rel="stylesheet"
-  />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise 🎉</title>
 
-  <style>
-    /* Subtle floating */
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-      100% { transform: translateY(0); }
-    }
-    .float {
-      animation: float 4s ease-in-out infinite;
-    }
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    /* Neon glow */
-    .neon {
-      box-shadow:
-        0 0 20px rgba(168, 85, 247, 0.35),
-        0 0 40px rgba(168, 85, 247, 0.15);
-    }
-  </style>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        .balloon {
+            position: absolute;
+            bottom: -40px;
+            font-size: 2rem;
+            animation: floatUp linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center px-4
-             bg-gradient-to-br from-[#0b0014] via-[#16001f] to-[#0a0012] text-white">
+<body class="bg-gradient-to-tr from-rose-500 via-fuchsia-600 to-indigo-700 min-h-screen flex items-center justify-center">
 
-  <!-- Ambient Glow -->
-  <div class="absolute inset-0 -z-10">
-    <div class="absolute top-20 left-20 w-72 h-72 bg-purple-600/30 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 right-20 w-72 h-72 bg-fuchsia-600/30 rounded-full blur-3xl"></div>
-  </div>
+    <!-- Balloons -->
+    <div id="balloon-container" class="fixed inset-0 pointer-events-none"></div>
 
-  <!-- Main Card -->
-  <div class="max-w-5xl w-full rounded-3xl p-8 md:p-10
-              bg-white/5 backdrop-blur-xl border border-white/10
-              neon animate__animated animate__fadeInUp">
+    <!-- Card -->
+    <div class="relative z-10 bg-white/20 backdrop-blur-xl p-10 rounded-3xl shadow-2xl text-center text-white w-[90%] max-w-md">
 
-    <!-- Emoji -->
-    <div class="text-6xl mb-4 text-center float">🎉</div>
+        <div class="text-5xl mb-4">🎉</div>
 
-    <!-- Heading -->
-    <h1 class="text-4xl md:text-5xl font-extrabold text-center mb-3">
-      Happy Birthday <span class="text-purple-400">Guru</span> 🎂
-    </h1>
+        <!-- Hidden initially -->
+        <h1 id="title" class="text-3xl font-bold mb-3 hidden">
+            Happy Birthday 🎂
+        </h1>
 
-    <p class="text-center text-gray-300 mb-10">
-      Another year. Another level. Keep shining ✨ <br>
-      Let our ShivaGuru  bond last forever
-    </p>
+        <p id="name_op" class="text-2xl font-semibold mb-4 hidden"></p>
 
-    <!-- Image Grid -->
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
-      <!-- Image -->
-      <!--<div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
-        <img
-          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/Snapchat-688603331.jpg"
-          class="w-full h-full object-cover transform
-                 group-hover:scale-110 group-hover:rotate-1
-                 transition duration-500"
-          alt="Memory 1"
-        />
-      </div>-->
-
-      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
-        <img
-          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/IMG-20230123-WA0003.jpg"
-          class="w-full h-full object-cover transform
-                 group-hover:scale-110 group-hover:-rotate-1
-                 transition duration-500"
-          alt="Memory 2"
-        />
-      </div>
-
-      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
-        <img
-          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/IMG-20230216-WA0000.jpg"
-          class="w-full h-full object-cover transform
-                 group-hover:scale-110 group-hover:-rotate-1
-                 transition duration-500"
-          alt="Memory 2"
-        />
-      </div>
-
-      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
-        <img
-          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/constitution group .jpg"
-          class="w-full h-full object-cover transform
-                 group-hover:scale-110 group-hover:-rotate-1
-                 transition duration-500"
-          alt="Memory 2"
-        />
-      </div>
-
-      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
-        <img
-          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/Snapchat-688603331.jpg"
-          class="w-full h-full object-cover transform
-                 group-hover:scale-110 group-hover:-rotate-1
-                 transition duration-500"
-          alt="Memory 2"
-        />
-      </div>
-
-      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
-        <img
-          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/Snapchat-29700786.jpg"
-          class="w-full h-full object-cover transform
-                 group-hover:scale-110 group-hover:-rotate-1
-                 transition duration-500"
-          alt="Memory 2"
-        />
-      </div>
-
-      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
-        <img
-          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/Snapchat-1168903086.jpg"
-          class="w-full h-full object-cover transform
-                 group-hover:scale-110 group-hover:-rotate-1
-                 transition duration-500"
-          alt="Memory 2"
-        />
-      </div>
-
-      <div class="group overflow-hidden rounded-2xl border border-purple-500/20 neon">
-        <img
-          src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/IMG-20250216-WA0002.jpg"
-          class="w-full h-full object-cover transform
-                 group-hover:scale-110 group-hover:-rotate-1
-                 transition duration-500"
-          alt="Memory 2"
-        />
-      </div>
-
-      <div class="">
-        <img 
-            src="https://raw.githubusercontent.com/shivji2138/bday-wishes-web/main/assets/IMG-20241223-WA0013.jpg"
-            class="w-full h-full object-cover transform
-                 group-hover:scale-110 group-hover:-rotate-1
-                 transition duration-500"
-        />
-      </div>
-
-    
+        <input 
+            type="text"
+            id="name_input"
+            placeholder="Enter Your Name"
+            class="w-full p-3 rounded-xl text-black outline-none text-center"
+        >
 
     </div>
 
-    <!-- Footer -->
-    <div class="mt-10 text-center text-sm text-gray-400">
-      Crafted with 💜 by <span class="text-purple-300 font-semibold">Shiva Akash R</span>
-    </div>
+    <script>
+        const nameInput = document.getElementById("name_input");
+        const nameOutput = document.getElementById("name_op");
+        const title = document.getElementById("title");
 
-  </div>
+        nameInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" && nameInput.value.trim() !== "") {
+
+                // Show text
+                title.classList.remove("hidden");
+                nameOutput.classList.remove("hidden");
+
+                // Animate
+                title.classList.add("animate__animated", "animate__fadeInDown");
+                nameOutput.classList.add("animate__animated", "animate__fadeInUp");
+
+                nameOutput.textContent = nameInput.value;
+
+                // Optional: hide input after submit
+                nameInput.style.display = "none";
+            }
+        });
+
+        function createBalloon() {
+            const container = document.getElementById("balloon-container");
+            const balloon = document.createElement("div");
+            const emojis = ["🎈", "✨", "💖", "🧁", "⭐", "🍭"];
+
+            balloon.className = "balloon";
+            balloon.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            balloon.style.left = Math.random() * 100 + "vw";
+            balloon.style.animationDuration = (Math.random() * 3 + 4) + "s";
+
+            container.appendChild(balloon);
+
+            setTimeout(() => balloon.remove(), 7000);
+        }
+
+        setInterval(createBalloon, 400);
+    </script>
 
 </body>
 </html>
